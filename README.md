@@ -283,3 +283,11 @@ For bug reports and feature requests related to Ultralytics software, please vis
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
   <a href="https://discord.com/invite/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-discord.png" width="3%" alt="Ultralytics Discord"></a>
 </div>
+
+
+```bash 
+python /workspace/datasets/data_copy_to_images_labels.py
+python /workspace/datasets/wave/make_train_list.py
+python /workspace/datasets/wave/make_val_list.py
+
+```
