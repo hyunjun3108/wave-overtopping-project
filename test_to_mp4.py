@@ -3,9 +3,9 @@ import os
 from glob import glob
 
 # 이미지가 저장된 디렉토리 경로
-image_dir = '/ultralytics/runs/detect/predict_H09.00T2.2h37_IR_G'
+image_dir = '/ultralytics/runs/detect/predict_V_H08.00T1.8h37'
 # 저장할 비디오 파일 경로
-output_video_path = '/workspace/runs/detect/output_H09.00T2.2h37_IR_G.mp4'
+output_video_path = '/workspace/runs/predict/predict_V_H08.00T1.8h37.mp4'
 
 # 이미지 파일들을 정렬된 리스트로 가져오기
 image_paths = sorted(glob(os.path.join(image_dir, '*.jpg')))
