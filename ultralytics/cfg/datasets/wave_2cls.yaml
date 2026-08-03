@@ -1,10 +1,9 @@
-# Wave dataset configuration
 path: /workspace/datasets/wave
 train: train2025_nature.txt
 val: val2025_nature.txt
 test: val2025_nature.txt
 
-# Classes
-nc: 1
+nc: 2
 names:
   0: wave
+  1: wave_in_roi

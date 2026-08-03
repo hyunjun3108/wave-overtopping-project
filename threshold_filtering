@@ -1,0 +1,50 @@
+"""
+월파 필터 - 박스가 방파제 위로 솟구치는 정도로 판단
+"""
+from pathlib import Path
+
+# 🔥 reassign된 결과 폴더 사용 (MTR 100% 나온 결과)
+PRED_DIR = "/workspace/runs/wave/track_final/labels_wave"
+
+# 세 가지 threshold로 비교 (이미지 보고 적절한 값 고르기)
+for threshold_name, y_threshold in [
+    ("loose_0.60", 0.60),
+    ("strict_0.55", 0.55),
+    ("very_strict_0.50", 0.50),
+]:
+    OUT_DIR = f"/workspace/runs/wave/track_final/labels_filtered_{threshold_name}"
+    Path(OUT_DIR).mkdir(parents=True, exist_ok=True)
+    
+    kept, filtered = 0, 0
+    files_with_kept = 0
+    
+    for txt in Path(PRED_DIR).glob("*.txt"):
+        kept_lines = []
+        with open(txt) as f:
+            for line in f:
+                parts = line.strip().split()
+                if len(parts) < 5: 
+                    continue
+                cls, x, y, w, h = map(float, parts[:5])
+                y_top = y - h / 2
+                
+                if y_top < y_threshold:
+                    # 🔥 원본 라인 전체 보존 (conf, track_id 포함)
+                    kept_lines.append(line.strip())
+                    kept += 1
+                else:
+                    filtered += 1
+        
+        if kept_lines:
+            with open(Path(OUT_DIR) / txt.name, "w") as f:
+                f.write("\n".join(kept_lines) + "\n")
+            files_with_kept += 1
+    
+    total = kept + filtered
+    if total > 0:
+        print(f"{threshold_name:20s}: 보존 {kept:5d} ({kept/total*100:5.1f}%), "
+              f"필터링 {filtered:5d}, 파일 {files_with_kept:5d}개 → {OUT_DIR}")
+    else:
+        print(f"{threshold_name:20s}: 처리할 데이터 없음")
+
+print("\n완료!")

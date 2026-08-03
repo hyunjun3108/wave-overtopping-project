@@ -1,0 +1,21 @@
+Wave Detection & Tracking - 최종 결과
+======================================================================
+
+[설정]
+  모델: yolov9e_2cls
+  영상: 2026-01-20T10-16-10.mp4 (24,593 프레임)
+  Detection conf: 0.2351 (Optuna 최적)
+  Tracker: ByteTrack (Optuna 최적)
+  Filter: v2_medium + conf>=0.75 + time_gap=150 + min_frames=5
+
+[9가지 지표]
+  mAP@0.5              ↑  92.68%
+  mAP@0.5:0.95         ↑  67.82%
+  MOTA                 ↑  53.83%
+  MOTP                 ↑  77.49%
+  CLR_Re               ↑  69.16%
+  CLR_Pr               ↑  84.53%
+  MTR                  ↑  62.50%
+  PTR                  -  37.50%
+  MLR                  ↓  0.00%
+  FP_per_frame         ↓  0.1266

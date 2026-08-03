@@ -146,6 +146,12 @@ runs/
 wandb/
 .DS_Store
 
+# Large video outputs
+*.mp4
+
+# Nested repo, handled separately
+/yolov7/
+
 # Neural Network weights -----------------------------------------------------------------------------------------------
 weights/
 *.weights

@@ -1,0 +1,5 @@
+conf=0.2351
+y_threshold=0.6257
+conf_post=0.4706
+wave_gap_threshold=437
+tracker_type=bytetrack

@@ -1,0 +1,221 @@
+======================================================================
+🎯 WAVE TRACKING OPTUNA - 최종판 (전체 파이프라인 최적화)
+======================================================================
+✓ Video: 1920x1080, 24593 frames
+✓ GT loaded: 561 frames
+✓ Model loaded
+
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+5826 labels saved to /ultralytics/runs/detect/track3/labels
+  ⭐ Trial 1: MOTA=48.5%, Re=73%, MTR=93%, IDSW=11, waves=12, tracker=bytetrack
+Trial 2 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Trial 3 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6373 labels saved to /ultralytics/runs/detect/track3/labels
+  ⭐ Trial 4: MOTA=55.8%, Re=76%, MTR=93%, IDSW=7, waves=8, tracker=bytetrack
+Trial 5 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6373 labels saved to /ultralytics/runs/detect/track3/labels
+Trial 7 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6373 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6373 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6373 labels saved to /ultralytics/runs/detect/track3/labels
+Trial 11 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+  ⭐ Trial 14: MOTA=61.1%, Re=79%, MTR=93%, IDSW=9, waves=10, tracker=bytetrack
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+  ⭐ Trial 18: MOTA=62.2%, Re=82%, MTR=100%, IDSW=10, waves=11, tracker=bytetrack
+Trial 19 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+  ⭐ Trial 20: MOTA=65.6%, Re=84%, MTR=100%, IDSW=13, waves=14, tracker=bytetrack
+Trial 22 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Trial 23 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+  ⭐ Trial 29: MOTA=68.3%, Re=84%, MTR=100%, IDSW=3, waves=4, tracker=bytetrack
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+  ⭐ Trial 34: MOTA=70.1%, Re=86%, MTR=100%, IDSW=3, waves=4, tracker=bytetrack
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Trial 40 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Trial 49 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+Trial 58 failed: 
+            'IterableSimpleNamespace' object has no attribute 'model'. This may be caused by a modified or out of date ultralytics
+            'default.yaml' file.
+Please update your code with 'pip install -U ultralytics' and if necessary replace
+            /workspace/ultralytics/cfg/default.yaml with the latest version from
+            https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/default.yaml
+            
+Results saved to [1m/ultralytics/runs/detect/track3[0m
+6690 labels saved to /ultralytics/runs/detect/track3/labels
+
+======================================================================
+🏆 BEST RESULT
+======================================================================
+  MOTA:       70.05%
+  Recall:     85.56%
+  Precision:  85.11%
+  MTR:       100.00%
+  FP:          84
+  FN:          81
+  IDSW:         3
+  Waves:     4 / GT 14
+  Tracker:   bytetrack
+
+⚙️  BEST PARAMETERS:
+  --- Detection ---
+  conf: 0.2351
+  --- 사후 필터 ---
+  y_threshold: 0.6257
+  conf_post: 0.4706
+  wave_gap_threshold: 437
+  --- Tracker (bytetrack) ---
+  track_high_thresh: 0.2581
+  track_low_thresh: 0.1249
+  new_track_thresh: 0.8980
+  track_buffer: 289
+  match_thresh: 0.3298
+  min_box_area: 5
+  fuse_score: True
+
+💾 저장:
+  /workspace/tracker_final.yaml
+  /workspace/filter_final.txt
+
+📊 상위 5 trials:
+  1. MOTA=70.1%, Re=86%, MTR=100%, IDSW=3, waves=4, tracker=bytetrack
+  2. MOTA=68.4%, Re=84%, MTR=100%, IDSW=4, waves=5, tracker=bytetrack
+  3. MOTA=68.3%, Re=84%, MTR=100%, IDSW=3, waves=4, tracker=bytetrack
+  4. MOTA=68.3%, Re=84%, MTR=100%, IDSW=3, waves=4, tracker=bytetrack
+  5. MOTA=67.6%, Re=84%, MTR=100%, IDSW=4, waves=5, tracker=bytetrack

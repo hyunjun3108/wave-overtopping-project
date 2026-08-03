@@ -1,0 +1,66 @@
+import cv2
+import os
+import glob
+
+# ========================================
+# 설정
+# ========================================
+IMAGE_FOLDER = '/workspace/runs/predict'  # 이미지가 있는 폴더
+FPS = 5  # 재생 속도 (프레임/초)
+OUTPUT_VIDEO = '/workspace/output.mp4'  # 출력 영상 파일명
+
+# ========================================
+# 이미지를 영상으로 변환
+# ========================================
+def images_to_video(image_folder, output_path, fps=30):
+    """
+    폴더 내 JPG 이미지들을 영상으로 변환
+    """
+    # 이미지 파일 찾기 (jpg, jpeg, png 모두 지원)
+    images = sorted(glob.glob(os.path.join(image_folder, '*.jpg')))
+    images += sorted(glob.glob(os.path.join(image_folder, '*.jpeg')))
+    images += sorted(glob.glob(os.path.join(image_folder, '*.png')))
+    
+    if len(images) == 0:
+        print(f"❌ 이미지를 찾을 수 없습니다: {image_folder}")
+        return
+    
+    print(f"✓ {len(images)}개 이미지 발견")
+    
+    # 첫 번째 이미지로 크기 확인
+    first_image = cv2.imread(images[0])
+    height, width, _ = first_image.shape
+    
+    # 비디오 writer 생성
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    out = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
+    
+    # 모든 이미지를 영상에 추가
+    for i, image_path in enumerate(images):
+        img = cv2.imread(image_path)
+        
+        if img is None:
+            print(f"⚠️ 읽기 실패: {image_path}")
+            continue
+        
+        # 크기가 다르면 리사이즈
+        if img.shape[:2] != (height, width):
+            img = cv2.resize(img, (width, height))
+        
+        out.write(img)
+        
+        # 진행 상황 표시
+        if (i + 1) % 100 == 0:
+            print(f"진행: {i + 1}/{len(images)} ({(i+1)/len(images)*100:.1f}%)")
+    
+    out.release()
+    print(f"\n✓ 완료! 저장: {output_path}")
+    print(f"  - 총 프레임: {len(images)}")
+    print(f"  - FPS: {fps}")
+    print(f"  - 길이: {len(images)/fps:.1f}초")
+
+# ========================================
+# 실행
+# ========================================
+if __name__ == "__main__":
+    images_to_video(IMAGE_FOLDER, OUTPUT_VIDEO, FPS)

@@ -5,6 +5,11 @@
 Bayesian(Optuna) 하이퍼파라미터 탐색 — 자동 다중 런 처리(트랙 자동탐색)
 YOLO bbox 높이(h_norm) → '임펄스(impulse) + bias' 라벨을 CSV 시간축에 스냅핑하여 RMSE 최소화
 
+수정사항:
+- 라벨 그래프의 0값은 무조건 0에 고정
+- 높이가 있는 부분만 실제 스케일된 값 + bias 적용
+- bias는 라벨이 있는 부분에만 적용되고, 라벨이 없는 구간은 0 유지
+
 요청 반영
 - CSV는 fps 50이더라도 실제 기록 간격이 0.05s일 수 있음 → CSV의 실제 time 컬럼만 신뢰(별도 fps 가정 없음)
 - Label은 fps 30(고정)이며 프레임 기준의 txt로 기록됨 → (frame - first_frame_index)/label_fps 로 절대시간 계산
@@ -52,7 +57,7 @@ MPP_MIN: float = 0.015
 MPP_MAX: float = 0.03
 MPP_LOG_SAMPLING: bool = True
 
-# 라벨 오프셋(bias, m) 범위: "모두 위로" 평행이동량
+# 라벨 오프셋(bias, m) 범위: "라벨이 있는 부분에만" 평행이동량
 BIAS_MIN_M: float = 0.0
 BIAS_MAX_M: float = 0.5
 
@@ -239,6 +244,7 @@ def estimate_time_shift_grid(csv_time: np.ndarray,
 
 # =========================
 # 임펄스 스냅핑(라벨 fps=30을 실제 시간으로 환산 후 CSV 그리드로 스냅)
+# 수정: 라벨이 없는 구간은 0, 라벨이 있는 구간만 실제 값 + bias
 # =========================
 def make_label_impulses_snapped(lbl_hnorm_df: pd.DataFrame,
                                 csv_time: np.ndarray,
@@ -248,7 +254,7 @@ def make_label_impulses_snapped(lbl_hnorm_df: pd.DataFrame,
                                 time_shift_s: float) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
     """
     반환:
-      - label_on_csv: CSV 그리드와 동일 길이, 기본값=bias_m, 이벤트 인덱스에만 (scaled + bias_m)
+      - label_on_csv: CSV 그리드와 동일 길이, 기본값=0.0, 이벤트 인덱스에만 (scaled + bias_m)
       - event_times: 각 라벨 프레임이 매핑된 절대시간(shift 포함, 스냅 전)
       - event_indices: CSV 그리드에서의 스냅된 인덱스
     """
@@ -261,11 +267,11 @@ def make_label_impulses_snapped(lbl_hnorm_df: pd.DataFrame,
     # 스냅핑할 CSV 인덱스
     idxs = _nearest_indices(csv_time, event_times)
 
-    # 임펄스 높이
+    # 임펄스 높이 (스케일링 + bias)
     impulses = h_norm * float(H_lb) * float(mpp) + float(bias_m)
 
-    # CSV 그리드에 임펄스 배치(겹치면 최대값 유지)
-    out = np.full_like(csv_time, float(bias_m), dtype=float)
+    # CSV 그리드에 임펄스 배치 (기본값 0.0, 겹치면 최대값 유지)
+    out = np.zeros_like(csv_time, dtype=float)  # 수정: bias_m → 0.0
     for i, v in zip(idxs, impulses):
         if v > out[i]:
             out[i] = v
@@ -410,10 +416,10 @@ def run_final_eval(args, best_params, csv_time, csv_h, lbl_hnorm_df,
     if out_plot:
         os.makedirs(os.path.dirname(out_plot), exist_ok=True)
         plt.figure(figsize=(12, 6))
-        plt.plot(csv_time, csv_h, label="CSV: h (m)")
+        plt.plot(csv_time, csv_h, label="CSV: h (m)", linewidth=1.5)
         plt.plot(csv_time, lbl_on_csv,
                  label=f"Label (impulses snapped, fps={label_fps:.0f}, shift={total_shift:+.3f}s)",
-                 alpha=0.9)
+                 alpha=0.9, linewidth=1.5)
         plt.xlabel("Time (s)")
         plt.ylabel("Height (m)")
         title = (
@@ -422,8 +428,9 @@ def run_final_eval(args, best_params, csv_time, csv_h, lbl_hnorm_df,
             f"H_lb={int(H_lb)}, bias={bias_m:.3f} m, shift(est+opt)={total_shift:+.3f}s"
         )
         plt.title(title)
-        plt.grid(True)
+        plt.grid(True, alpha=0.3)
         plt.legend()
+        plt.tight_layout()
         plt.savefig(out_plot, dpi=220, bbox_inches="tight")
         plt.close()
         print(f"[{run_name}] [INFO] 플롯 저장: {out_plot}")
